@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groups & Communities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 10px;
+            padding: 10px 20px;
+            background-color: var(--button-primary);
+            color: var(--dark-navy);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        /* Card backgrounds */
+        div[style*="background-image"] {
+            background-image: none !important;
+            background-color: #F5F5F5 !important;  /* Very light grey */
+        }
+
+        /* Text colors inside cards */
+        .text-xl.font-semibold,
+        .text-gray-300,
+        .text-sm.text-gray-400,
+        .rounded-xl p {
+            color: black !important;
+        }
+
+        /* Container background */
+        .bg-gray-800 {
+            background-color: #f5f5f5ba !important;  /* Very light grey */
+            border: 2px solid var(--gold) !important;
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.15) !important;
+        }
+
+        /* Maintain button styling */
+        .bg-yellow-500,
+        .bg-green-500 {
+            color: var(--dark-navy) !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="max-w-6xl mx-auto p-6">
+        <!-- Home Button -->
+        <a href="index.html" class="text-yellow-400 text-lg font-semibold hover:underline">Home</a>
+
+        <h2 class="text-4xl font-bold text-center text-white mb-6">Groups & Communities</h2>
+        
+        <!-- Technical Groups -->
+        <h3 class="text-2xl font-semibold text-yellow-400 mt-6 mb-4">Technical Groups</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-gray-800 p-5 rounded-xl shadow-md hover:shadow-lg transition bg-cover bg-center" style="background-image: url('https://source.unsplash.com/400x300/?technology');">
+                <h3 class="text-xl font-semibold text-white">AI & Machine Learning</h3>
+                <p class="text-gray-300 mt-2">A community for AI enthusiasts to discuss and collaborate on ML projects.</p>
+                <div class="mt-4 flex justify-between items-center">
+                    <span class="text-sm text-gray-400">350 Members</span>
+                    <button class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Join</button>
+                </div>
+            </div>
+            
+            <div class="bg-gray-800 p-5 rounded-xl shadow-md hover:shadow-lg transition bg-cover bg-center" style="background-image: url('https://source.unsplash.com/400x300/?coding');">
+                <h3 class="text-xl font-semibold text-white">Web Development</h3>
+                <p class="text-gray-300 mt-2">Explore the latest trends and frameworks in web development.</p>
+                <div class="mt-4 flex justify-between items-center">
+                    <span class="text-sm text-gray-400">275 Members</span>
+                    <button class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Join</button>
+                </div>
+            </div>
+            
+            <div class="bg-gray-800 p-5 rounded-xl shadow-md hover:shadow-lg transition bg-cover bg-center" style="background-image: url('https://source.unsplash.com/400x300/?hackathon');">
+                <h3 class="text-xl font-semibold text-white">Hackathons & Competitions</h3>
+                <p class="text-gray-300 mt-2">Stay updated with upcoming hackathons and coding competitions.</p>
+                <div class="mt-4 flex justify-between items-center">
+                    <span class="text-sm text-gray-400">500 Members</span>
+                    <button class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Join</button>
+                </div>
+            </div>
+            
+            <div class="bg-gray-800 p-5 rounded-xl shadow-md hover:shadow-lg transition bg-cover bg-center" style="background-image: url('https://source.unsplash.com/400x300/?cybersecurity');">
+                <h3 class="text-xl font-semibold text-white">Cybersecurity & Ethical Hacking</h3>
+                <p class="text-gray-300 mt-2">A group dedicated to cybersecurity, ethical hacking, and digital forensics.</p>
+                <div class="mt-4 flex justify-between items-center">
+                    <span class="text-sm text-gray-400">420 Members</span>
+                    <button class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Join</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hobby-Based Groups -->
+        <h3 class="text-2xl font-semibold text-green-400 mt-8 mb-4">Hobby-Based Groups</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-gray-800 p-5 rounded-xl shadow-md hover:shadow-lg transition bg-cover bg-center" style="background-image: url('https://source.unsplash.com/400x300/?music');">
+                <h3 class="text-xl font-semibold text-white">Music & Performing Arts</h3>
+                <p class="text-gray-300 mt-2">A space for musicians, dancers, and artists to showcase their talent.</p>
+                <div class="mt-4 flex justify-between items-center">
+                    <span class="text-sm text-gray-400">200 Members</span>
+                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Join</button>
+                </div>
+            </div>
+            
+            <div class="bg-gray-800 p-5 rounded-xl shadow-md hover:shadow-lg transition bg-cover bg-center" style="background-image: url('https://source.unsplash.com/400x300/?photography');">
+                <h3 class="text-xl font-semibold text-white">Photography & Travel</h3>
+                <p class="text-gray-300 mt-2">Join fellow photography lovers and travel enthusiasts.</p>
+                <div class="mt-4 flex justify-between items-center">
+                    <span class="text-sm text-gray-400">180 Members</span>
+                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Join</button>
+                </div>
+            </div>
+            
+            <div class="bg-gray-800 p-5 rounded-xl shadow-md hover:shadow-lg transition bg-cover bg-center" style="background-image: url('https://source.unsplash.com/400x300/?fitness');">
+                <h3 class="text-xl font-semibold text-white">Sports & Fitness</h3>
+                <p class="text-gray-300 mt-2">Engage in sports activities and fitness challenges with the community.</p>
+                <div class="mt-4 flex justify-between items-center">
+                    <span class="text-sm text-gray-400">320 Members</span>
+                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Join</button>
+                </div>
+            </div>
+            
+            <div class="bg-gray-800 p-5 rounded-xl shadow-md hover:shadow-lg transition bg-cover bg-center" style="background-image: url('https://source.unsplash.com/400x300/?gaming');">
+                <h3 class="text-xl font-semibold text-white">Gaming & Esports</h3>
+                <p class="text-gray-300 mt-2">Connect with fellow gamers and participate in gaming tournaments.</p>
+                <div class="mt-4 flex justify-between items-center">
+                    <span class="text-sm text-gray-400">250 Members</span>
+                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Join</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

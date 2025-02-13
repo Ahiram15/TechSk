@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend Suggestions & Networking</title>
+    <style>
+        /* Color Theme */
+        :root {
+            --primary-color: #1A1A2E;
+            --secondary-color: #16213E;
+            --accent-color: #FFD700;
+            --background-color: #F4F4F9;
+            --card-background: #FFFFFF;
+            --text-primary: #EAEAEA;
+            --text-secondary: #B0B0B0;
+            --button-color: #FFC300;
+            --button-hover: #FFA500;
+            --button-primary: #FFC300;
+            --dark-navy: #1A1A2E;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--primary-color);
+            margin: 0;
+            padding: 40px;
+            color: var(--text-primary);
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .search-bar {
+            width: 50%;
+            padding: 12px;
+            margin: 0 auto 30px;
+            display: block;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            background: var(--secondary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .filter-section {
+            width: 70%;
+            margin: 0 auto 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter {
+            padding: 12px 24px;
+            background: var(--accent-color);
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .filter:hover {
+            background: var(--button-hover);
+        }
+
+        .profiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .profile-card {
+            background: var(--card-background);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        a{
+            text-decoration: none;;
+        }
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .profile-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin-bottom: 12px;
+            border: 3px solid var(--accent-color);
+        }
+
+        .profile-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .profile-info {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .connect-btn {
+            padding: 10px 20px;
+            background: var(--button-color);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .connect-btn:hover {
+            background: var(--button-hover);
+        }
+
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: var(--button-primary);
+            color: var(--dark-navy);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .home-button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-button">Home</a>
+    <h1>Find Friends & Connect</h1>
+
+    <input type="text" class="search-bar" placeholder="Search by name, university, or interests...">
+
+    <div class="filter-section">
+        <div class="filter">Same University 🎓</div>
+        <div class="filter">Technical Interests 💻</div>
+        <div class="filter">Hobbies 🎨</div>
+    </div>
+
+    <div class="profiles">
+        <div class="profile-card">
+            <img src="images/aarav.avif" class="profile-img" alt="Aarav">
+            <div class="profile-name">Aarav Mehta</div>
+            <div class="profile-info">🎓 IIT Bombay | AI & Machine Learning</div>
+            <button class="connect-btn">Connect</button>
+        </div>
+        <div class="profile-card">
+            <img src="images/ishita.avif" class="profile-img" alt="Ishita">
+            <div class="profile-name">Ishita Sharma</div>
+            <div class="profile-info">🎓 NIT Trichy | Cybersecurity & Ethical Hacking</div>
+            <button class="connect-btn">Connect</button>
+        </div>
+        <div class="profile-card">
+            <img src="images/rahul.jpg" class="profile-img" alt="Rahul">
+            <div class="profile-name">Rahul Verma</div>
+            <div class="profile-info">🎓 Delhi University | Web Development & UI/UX</div>
+            <button class="connect-btn">Connect</button>
+        </div>
+        <div class="profile-card">
+            <img src="images/priya.avif" class="profile-img" alt="Priya">
+            <div class="profile-name">Priya Nair</div>
+            <div class="profile-info">🎓 Anna University | Data Science & Analytics</div>
+            <button class="connect-btn">Connect</button>
+        </div>
+        <div class="profile-card">
+            <img src="images/sandeep.avif" class="profile-img" alt="Sandeep">
+            <div class="profile-name">Sandeep Reddy</div>
+            <div class="profile-info">🎓 VIT Vellore | Cloud Computing & DevOps</div>
+            <button class="connect-btn">Connect</button>
+        </div>
+        <div class="profile-card">
+            <img src="images/neha.avif" class="profile-img" alt="Neha">
+            <div class="profile-name">Neha Gupta</div>
+            <div class="profile-info">🎓 BITS Pilani | Blockchain & Crypto</div>
+            <button class="connect-btn">Connect</button>
+        </div>
+        <div class="profile-card">
+            <img src="images/varun.avif" class="profile-img" alt="Varun">
+            <div class="profile-name">Varun Iyer</div>
+            <div class="profile-info">🎓 SRM University | Robotics & Automation</div>
+            <button class="connect-btn">Connect</button>
+        </div>
+    </div>
+
+</body>
+</html>

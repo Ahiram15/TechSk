@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Learning Events</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* ========== Color Variables ========== */
+    :root {
+      --almost-black: #1B262C;
+      --dark-teal: #0F4C75;
+      --medium-blue: #3282B8;
+      --light-blue: #BBE1FA;
+      --white: #FFFFFF;
+    }
+
+    /* ========== Global Styles ========== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'poppins', sans-serif;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--almost-black);
+      color: var(--white);
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    h1, h2, h3, h4, h5 {
+      margin-bottom: 0.5rem;
+    }
+
+    /* ========== Header ========== */
+    header {
+      background-color: var(--dark-teal);
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 2.0rem;
+      font-weight: bold;
+      color: var(--white);
+    }
+    .logo1 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--yellow);
+    }
+
+    .search-container {
+      position: relative;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .search-container input {
+      width: 100%;
+      padding: 0.5rem 2.5rem 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .search-container .search-icon {
+      position: absolute;
+      right: 0.8rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--almost-black);
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* ========== Main Content ========== */
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--light-blue);
+    }
+
+    /* ========== Event Sections ========== */
+    .events-section {
+      margin-bottom: 3rem;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .event-card {
+      background-color: var(--white); /* White background */
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .event-image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .event-content {
+      padding: 1rem;
+      color: #000; /* Black text */
+    }
+
+    .event-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .event-description {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .event-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .event-meta span {
+      font-size: 0.85rem;
+      color: #000;
+    }
+
+    .location-icon {
+      margin-right: 0.3rem;
+    }
+
+    /* ========== Footer ========== */
+    footer {
+      text-align: center;
+      color: var(--white);
+      padding: 1rem;
+      background-color: var(--dark-teal);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== Header ========== -->
+  <header>
+    <div class="logo1"><a href="index.html">HOME</a></div>
+    <div class="logo">GrowTogether</div>
+    <div class="search-container">
+      <input type="text" placeholder="Search events..." />
+      <span class="search-icon">&#128270;</span>
+    </div>
+  </header>
+
+  <!-- ========== Main ========== -->
+  <main>
+    <!-- Ongoing Events Section -->
+    <section class="events-section">
+      <h2 class="section-title">Ongoing Events</h2>
+      <div class="events-grid">
+        <!-- Event Card 1 -->
+        <div class="event-card">
+          <img 
+            src="https://res.cloudinary.com/devex/image/fetch/c_scale,f_auto,q_auto,w_720/https://lh4.googleusercontent.com/VQyrPPyh-FGdV2BJtlcwDphesnxERD6SLWvGtARygLDVNSsXhFF0kzG_yXvLyiARZbKIG3VYF_CIbF4_B-Wy3Eu7kKhHKKR3pq_2ob2pdZgxt_Wz_uqXjRMrhIBKREQnJo--Ui9b" alt="Ongoing Event 1" 
+            alt="Ongoing Event 1" 
+            class="event-image"
+          />
+          <div class="event-content">
+            <h3 class="event-title">Live Coding Workshop</h3>
+            <p class="event-description">
+              Dive into real-time coding challenges with experts.
+            </p>
+            <div class="event-meta">
+              <span>
+                <strong class="location-icon">&#128205;</strong>
+                Campus Lab A
+              </span>
+              <span>LIVE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="event-card">
+          <img 
+            src="https://i.ytimg.com/vi/kXa6AzbjIKM/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CIAC0AWKAgwIABABGGUgTSg-MA8=&rs=AOn4CLCwEK6NP0rBXvuwS3IfZ6L6jf1mPw"  
+            alt="Ongoing Event 2" 
+            class="event-image"
+          />
+          <div class="event-content">
+            <h3 class="event-title">Entrepreneurship Meetup</h3>
+            <p class="event-description">
+              Network with student startups and mentors.
+            </p>
+            <div class="event-meta">
+              <span>
+                <strong class="location-icon">&#128205;</strong>
+                Auditorium
+              </span>
+              <span>LIVE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="events-section">
+      <h2 class="section-title">Upcoming Events</h2>
+      <div class="events-grid">
+        <!-- Event Card 1 -->
+        <div class="event-card">
+          <img 
+            src="https://varioproductions.com/wp-content/uploads/2020/02/5-Event-Tech-Trends-to-Watch-Out-For-in-2020-scaled-1-1024x683.jpg" 
+            alt="Upcoming Event 1" 
+            class="event-image"
+          />
+          <div class="event-content">
+            <h3 class="event-title">Data Science Symposium</h3>
+            <p class="event-description">
+              Explore the latest trends in machine learning and AI.
+            </p>
+            <div class="event-meta">
+              <span>
+                <strong class="location-icon">&#128205;</strong>
+                Hall 3
+              </span>
+              <span>Oct 25, 10 AM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="event-card">
+          <img 
+            src="https://lp.franka.de/hubfs/Event%20page-1.jpg" 
+            alt="Upcoming Event 2" 
+            class="event-image"
+          />
+          <div class="event-content">
+            <h3 class="event-title">Web Dev Bootcamp</h3>
+            <p class="event-description">
+              A hands-on workshop for full-stack web development.
+            </p>
+            <div class="event-meta">
+              <span>
+                <strong class="location-icon">&#128205;</strong>
+                Online
+              </span>
+              <span>Nov 5, 2 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="event-card">
+          <img 
+            src="https://images.spiceworks.com/wp-content/uploads/2023/09/05181029/top-10-tech-events-in-September-2023.jpg" 
+            alt="Upcoming Event 3" 
+            class="event-image"
+          />
+          <div class="event-content">
+            <h3 class="event-title">Creative Writing Workshop</h3>
+            <p class="event-description">
+              Enhance your storytelling and writing skills.
+            </p>
+            <div class="event-meta">
+              <span>
+                <strong class="location-icon">&#128205;</strong>
+                Library Room B
+              </span>
+              <span>Dec 1, 11 AM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <p>&copy; 2025 GrowTogether - Empowering Student Collaboration</p>
+  </footer>
+
+</body>
+</html>

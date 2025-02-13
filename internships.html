@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Portal</title>
+    <style>
+        :root {
+            /* Core Colors */
+            --dark-navy: #1A1A2E;      /* Dark Navy Blue */
+            --deep-blue: #16213E;      /* Deep Blue */
+            --gold: #FFD700;           /* Gold/Yellow */
+            --light-grey: #F4F4F9;     /* Light Greyish White */
+            --white: #FFFFFF;          /* Pure White */
+            --text-light: #EAEAEA;     /* Light Grey */
+            --text-muted: #B0B0B0;     /* Muted Grey */
+            --button-yellow: #FFC300;   /* Bright Yellow */
+            --button-orange: #FFA500;   /* Orange */
+
+            /* Functional Colors */
+            --background: var(--dark-navy);
+            --header-bg: var(--deep-blue);
+            --header-text: var(--text-light);
+            --card-bg: var(--white);
+            --card-border: var(--gold);
+            --text-primary: var(--text-light);
+            --text-secondary: var(--text-muted);
+            --button-primary: var(--button-yellow);
+            --button-hover: var(--button-orange);
+            --tag-bg: var(--deep-blue);
+            --tag-text: var(--text-light);
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--background);
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background-color: var(--header-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            border: none;
+            text-align: center;
+            color: var(--header-text);
+        }
+
+        .search-bar {
+            margin: 20px 0;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .search-input {
+            padding: 12px;
+            width: 50%;
+            border: 1px solid var(--gold);
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: var(--white);
+            color: black;
+        }
+
+        .search-input::placeholder {
+            color: #666666;
+        }
+
+        .filter-dropdown {
+            padding: 12px;
+            border: 1px solid var(--gold);
+            border-radius: 6px;
+            background-color: var(--white);
+            color: black;
+        }
+
+        .opportunities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .opportunity-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            color: black;
+        }
+
+        .opportunity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .opportunity-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: black;
+            margin-bottom: 12px;
+        }
+
+        .company-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .company-logo {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: var(--dark-navy);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background-color: var(--tag-bg);
+            color: var(--tag-text);
+            margin: 0 5px 5px 0;
+            font-size: 14px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .save-btn, .apply-btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .save-btn {
+            background-color: transparent;
+            border: 2px solid var(--button-primary);
+            color: var(--button-primary);
+        }
+
+        .apply-btn {
+            background-color: var(--button-primary);
+            color: var(--dark-navy);
+            border: none;
+        }
+
+        .save-btn:hover {
+            background-color: var(--button-primary);
+            color: var(--dark-navy);
+        }
+
+        .apply-btn:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .opportunities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-input {
+                width: 100%;
+            }
+            
+            .search-bar {
+                flex-direction: column;
+            }
+        }
+
+        .filter {
+            padding: 12px 24px;
+            background-color: var(--white);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            color: black;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .filter:hover {
+            background-color: var(--gold);
+            color: black;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter.active {
+            background-color: var(--gold);
+            color: black;
+            border-color: var(--gold);
+        }
+
+        .company-info p {
+            color: black;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: var(--button-primary);
+            color: var(--dark-navy);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .home-button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-button">Home</a>
+    <div class="container">
+        <div class="header">
+            <h1>Find Your Perfect Opportunity</h1>
+            <p>Discover internships that match your skills and interests</p>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search for internships...">
+                <select class="filter-dropdown">
+                    <option value="">All Locations</option>
+                    <option value="remote">Remote</option>
+                    <option value="onsite">On-site</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+                <select class="filter-dropdown">
+                    <option value="">All Categories</option>
+                    <option value="technology">Technology</option>
+                    <option value="writing">Writing</option>
+                    <option value="design">Design</option>
+                    <option value="research">Research</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="opportunities-grid">
+            <div class="opportunity-card">
+                <div class="opportunity-title">Software Engineering Intern</div>
+                <div class="company-info">
+                    <div class="company-logo"></div>
+                    <p>Innovate Tech</p>
+                </div>
+                <span class="tag">Remote</span>
+                <span class="tag">Paid</span>
+                <span class="tag">Technology</span>
+                <p>Join our dynamic team and work on cutting-edge projects</p>
+                <div class="buttons">
+                    <button class="save-btn">Save</button>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            </div>
+            <div class="opportunity-card">
+                <div class="opportunity-title">Content Writer Intern</div>
+                <div class="company-info">
+                    <div class="company-logo"></div>
+                    <p>Creative Agency</p>
+                </div>
+                <span class="tag">Hybrid</span>
+                <span class="tag">Paid</span>
+                <span class="tag">Writing</span>
+                <p>Create compelling content for leading brands</p>
+                <div class="buttons">
+                    <button class="save-btn">Save</button>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            </div>
+            <div class="opportunity-card">
+                <div class="opportunity-title">Data Science Intern</div>
+                <div class="company-info">
+                    <div class="company-logo"></div>
+                    <p>AI Research Hub</p>
+                </div>
+                <span class="tag">On-site</span>
+                <span class="tag">Paid</span>
+                <span class="tag">Data Science</span>
+                <p>Work with big data and machine learning models</p>
+                <div class="buttons">
+                    <button class="save-btn">Save</button>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            </div>
+            <div class="opportunity-card">
+                <div class="opportunity-title">UI/UX Design Intern</div>
+                <div class="company-info">
+                    <div class="company-logo"></div>
+                    <p>Tech Innovators Inc.</p>
+                </div>
+                <span class="tag">Remote</span>
+                <span class="tag">Paid</span>
+                <span class="tag">Design</span>
+                <p>Design beautiful and intuitive user interfaces</p>
+                <div class="buttons">
+                    <button class="save-btn">Save</button>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            </div>
+            <div class="opportunity-card">
+                <div class="opportunity-title">Research Assistant - AI/ML</div>
+                <div class="company-info">
+                    <div class="company-logo"></div>
+                    <p>Research Labs Co.</p>
+                </div>
+                <span class="tag">On-site</span>
+                <span class="tag">Paid</span>
+                <span class="tag">Research</span>
+                <p>Contribute to groundbreaking AI research</p>
+                <div class="buttons">
+                    <button class="save-btn">Save</button>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
