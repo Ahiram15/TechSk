@@ -1,82 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumni & Mentor Connect</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hobby Tournaments & Coach Profiles</title>
+  <style>
+    /* Color Palette */
+    :root {
+      --almost-black: #00111a;
+      --dark-teal-blue: #0F4C75;
+      --medium-blue: #3282B8;
+      --light-blue: #BBE1FA;
+      --white: #FFFFFF;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--almost-black);
+      color: var(--white);
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: var(--light-blue);
+      text-decoration: none;
+    }
+
+    h1, h2 {
+      color: var(--light-blue);
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 20px 0;
+      background-color: var(--dark-teal-blue);
+      position: relative;
+    }
+
+    /* Home Button */
+    .home-button {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--medium-blue);
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: var(--white);
+      transition: background-color 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: var(--light-blue);
+      color: var(--almost-black);
+    }
+
+    /* Event Section */
+    .events-section {
+      margin: 40px 0;
+    }
+
+    .event-card {
+      background-color: var(--white);
+      color: var(--almost-black);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      display: flex;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .event-image {
+      width: 40%;
+      object-fit: cover;
+    }
+
+    .event-details {
+      padding: 20px;
+      width: 60%;
+    }
+
+    .event-title {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .event-date, .event-location {
+      font-size: 1em;
+      margin-bottom: 5px;
+    }
+
+    /* Coach Section */
+    .coaches-section {
+      margin: 40px 0;
+    }
+
+    .coach-card {
+      background-color: var(--white);
+      color: var(--almost-black);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .coach-image {
+      width: 30%;
+      object-fit: cover;
+    }
+
+    .coach-details {
+      padding: 20px;
+      width: 70%;
+    }
+
+    .coach-name {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .coach-bio {
+      font-size: 1em;
+      margin-bottom: 10px;
+    }
+
+    .coach-contact {
+      font-size: 1em;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .event-card, .coach-card {
+        flex-direction: column;
+      }
+
+      .event-image, .coach-image {
+        width: 100%;
+      }
+
+      .event-details, .coach-details {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white">
-    <div class="max-w-6xl mx-auto p-6">
-        
-        <!-- Home Text -->
-        <div class="mb-4">
-            <span class="text-yellow-400 text-lg font-semibold"><a href="index.html">Home</a></span>
-        </div>
+<body>
 
-        <h2 class="text-4xl font-bold text-center text-white mb-6">Alumni & Mentor Connect</h2>
-        
-        <!-- Mentors Section -->
-        <h3 class="text-2xl font-semibold text-blue-400 mt-6 mb-4">Mentors</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition bg-cover bg-center" style="background-image: url('https://source.unsplash.com/400x300/?mentor,ai');">
-                <h3 class="text-xl font-semibold text-gray-900">John Doe - AI Specialist</h3>
-                <p class="text-gray-700 mt-2">Senior AI Engineer at Google, helping students navigate AI career paths.</p>
-                <div class="mt-4 flex justify-between items-center">
-                    <span class="text-sm text-gray-600">Available for Mentorship</span>
-                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Connect</button>
-                </div>
-            </div>
-            
-            <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition bg-cover bg-center" style="background-image: url('https://source.unsplash.com/400x300/?business,mentor');">
-                <h3 class="text-xl font-semibold text-gray-900">Jane Smith - Startup Mentor</h3>
-                <p class="text-gray-700 mt-2">Founder of TechStart, mentoring students in entrepreneurship and startups.</p>
-                <div class="mt-4 flex justify-between items-center">
-                    <span class="text-sm text-gray-600">Available for Sessions</span>
-                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Connect</button>
-                </div>
-            </div>
-            
-            <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition bg-cover bg-center" style="background-image: url('https://source.unsplash.com/400x300/?coding,mentor');">
-                <h3 class="text-xl font-semibold text-gray-900">Michael Lee - Full Stack Developer</h3>
-                <p class="text-gray-700 mt-2">Tech Lead at Facebook, providing insights on web development and software engineering.</p>
-                <div class="mt-4 flex justify-between items-center">
-                    <span class="text-sm text-gray-600">Available for Code Reviews</span>
-                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Connect</button>
-                </div>
-            </div>
-        </div>
+  <header>
+    <a href="/" class="home-button">Home</a>
+    <h1>Hobby Tournaments & Coach Profiles</h1>
+  </header>
 
-        <!-- Alumni Section -->
-        <h3 class="text-2xl font-semibold text-green-400 mt-8 mb-4">Alumni</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition bg-cover bg-center" style="background-image: url('https://source.unsplash.com/400x300/?corporate,office');">
-                <h3 class="text-xl font-semibold text-gray-900">Alice Johnson - Software Engineer</h3>
-                <p class="text-gray-700 mt-2">Graduated in 2018, currently working at Microsoft as a software engineer.</p>
-                <div class="mt-4 flex justify-between items-center">
-                    <span class="text-sm text-gray-600">Willing to Guide Students</span>
-                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Connect</button>
-                </div>
-            </div>
-            
-            <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition bg-cover bg-center" style="background-image: url('https://source.unsplash.com/400x300/?data,scientist');">
-                <h3 class="text-xl font-semibold text-gray-900">Robert Brown - Data Scientist</h3>
-                <p class="text-gray-700 mt-2">Graduated in 2016, now a data scientist at Amazon.</p>
-                <div class="mt-4 flex justify-between items-center">
-                    <span class="text-sm text-gray-600">Available for Career Advice</span>
-                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Connect</button>
-                </div>
-            </div>
-            
-            <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition bg-cover bg-center" style="background-image: url('https://source.unsplash.com/400x300/?finance,alumni');">
-                <h3 class="text-xl font-semibold text-gray-900">Sophia Davis - Financial Analyst</h3>
-                <p class="text-gray-700 mt-2">Graduated in 2015, currently working as a financial analyst at Goldman Sachs.</p>
-                <div class="mt-4 flex justify-between items-center">
-                    <span class="text-sm text-gray-600">Offers Financial Career Guidance</span>
-                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Connect</button>
-                </div>
-            </div>
+  <div class="container">
+
+    <!-- Events Section -->
+    <section class="events-section">
+      <h2>Upcoming Hobby Tournaments</h2>
+
+      <!-- Event Card 1 -->
+      <div class="event-card">
+        <img src="https://th-i.thgim.com/public/incoming/7qm1oi/article68513460.ece/alternates/FREE_1200/DSC5598.jpg" alt="Chess Tournament" class="event-image">
+        <div class="event-details">
+          <h3 class="event-title">Chess Championship 2025</h3>
+          <p class="event-date">Date: March 15, 2025</p>
+          <p class="event-location">Location: Downtown Community Center</p>
+          <p>Join us for an exciting chess tournament open to all skill levels. Prizes for top players!</p>
         </div>
+      </div>
+
+      <!-- Event Card 2 -->
+      <div class="event-card">
+        <img src="https://monroeartscenter.com/wp-content/uploads/2022/08/edited-for-website_2.jpg" alt="Photography Contest" class="event-image">
+        <div class="event-details">
+          <h3 class="event-title">Nature Photography Contest</h3>
+          <p class="event-date">Date: April 10, 2025</p>
+          <p class="event-location">Location: City Park</p>
+          <p>Showcase your photography skills in our nature-themed contest. Winners will be featured in our annual calendar.</p>
+        </div>
+      </div>
+
+      <!-- Event Card 3 -->
+      <div class="event-card">
+        <img src="https://www.judgify.me/l/wp-content/uploads/2018/05/cooking-contest.png" alt="Cooking Competition" class="event-image">
+        <div class="event-details">
+          <h3 class="event-title">Gourmet Cooking Competition</h3>
+          <p class="event-date">Date: May 5, 2025</p>
+          <p class="event-location">Location: Culinary Arts Center</p>
+          <p>Compete with fellow cooking enthusiasts and showcase your culinary talents. Special guest judges!</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Coaches Section -->
+    <section class="coaches-section">
+      <h2>Meet Our Coaches</h2>
+
+      <!-- Coach Card 1 -->
+      <div class="coach-card">
+        <img src="https://i.ytimg.com/vi/Cs4k-PK8hoA/maxresdefault.jpg" alt="Coach John Doe" class="coach-image">
+        <div class="coach-details">
+          <h3 class="coach-name">John Doe</h3>
+          <p class="coach-bio">John is a seasoned chess master with over 20 years of experience. He has coached numerous state champions and is passionate about teaching strategy and critical thinking.</p>
+          <p class="coach-contact">Contact: johndoe@gmail.com</p>
+        </div>
+      </div>
+
+      <!-- Coach Card 2 -->
+      <div class="coach-card">
+        <img src="https://i.ytimg.com/vi/4jPLz-5kYdc/maxresdefault.jpg" alt="Coach Jane Smith" class="coach-image">
+        <div class="coach-details">
+            <h3 class="coach-name">Jane Smith</h3>
+
+            <p class="coach-bio">Jane is an award-winning photographer known for her stunning nature shots. She has published several books and enjoys mentoring aspiring photographers.</p>
+            <p class="coach-contact">Contact:janesmith@gmail.com</p>
+        </div>
+      </div>
+    </section>
     </div>
 </body>
 </html>
