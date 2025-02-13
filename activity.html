@@ -45,6 +45,25 @@
       text-align: center;
       padding: 20px 0;
       background-color: var(--dark-teal-blue);
+      position: relative;
+    }
+
+    /* Home Button */
+    .home-button {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--medium-blue);
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: var(--white);
+      transition: background-color 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: var(--light-blue);
+      color: var(--almost-black);
     }
 
     /* Event Section */
@@ -141,6 +160,7 @@
 <body>
 
   <header>
+    <a href="/" class="home-button">Home</a>
     <h1>Hobby Tournaments & Coach Profiles</h1>
   </header>
 
@@ -208,7 +228,7 @@
             <p class="coach-bio">Jane is an award-winning photographer known for her stunning nature shots. She has published several books and enjoys mentoring aspiring photographers.</p>
             <p class="coach-contact">Contact:janesmith@gmail.com</p>
         </div>
-      </div>
+      </div>
     </section>
     </div>
 </body>
