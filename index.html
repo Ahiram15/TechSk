@@ -3,133 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GrowTogether</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Signup - Friend Networking App</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+        /* Color Palette */
+        :root {
+            --primary-color: #1A1A2E;
+            --secondary-color: #16213E;
+            --accent-color: #FFD700;
+            --background-color: #F4F4F9;
+            --card-background: #FFFFFF;
+            --text-primary: #EAEAEA;
+            --text-secondary: #B0B0B0;
+            --button-color: #FFC300;
+            --button-hover: #FFA500;
+            --button-primary: #FFC300;
+            --dark-navy: #1A1A2E;
         }
+
         body {
-            background-color: rgb(0, 0, 29);
-            height: 100vh;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 40px 10%;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        .form-group:nth-last-child(1) {
+            grid-column: span 2;
+        }
+
+        .form-group:nth-last-child(2),
+        .form-group:nth-last-child(3) {
+            grid-column: span 2;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+
+        input, select, textarea {
             width: 100%;
-            color: yellow; /* Dark text for contrast */
-            line-height: 1.6;
-        }
-        .navbar {
-            background-color: #1B262C; /* Bright orange with transparency */
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        .navbar h1 {
-            color: #ffffff; /* White for contrast */
-            font-size: 1.8em;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .nav-links li {
-            margin: 0 15px;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #ffffff; /* White for links */
-            font-weight: 500;
-            transition: color 0.3s;
-            padding: 8px 12px;
-            border-radius: 5px;
-        }
-        .nav-links a:hover {
-            background-color: rgba(255, 255, 255, 0.3); /* Light hover effect */
-            color: #ffffff;
-        }
-        .home-section {
-            text-align: center;
-            padding: 120px 10px;
-            color: yellow;
-        }
-        .home-section h2 {
-            font-size: 2.8em;
-            margin-bottom: 20px;
-        }
-        .home-section p {
-            font-size: 1.4em;
-            max-width: 800px;
-            margin: auto;
-            margin-bottom: 30px;
-        }
-        .cta-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 15px 30px;
-            background-color: orangered; /* Bright green with transparency */
-            color: white;
-            text-decoration: none;
+            padding: 12px;
+            border: 2px solid var(--secondary-color);
             border-radius: 8px;
-            font-size: 1.2em;
-            transition: background 0.3s, transform 0.3s;
+            background: var(--card-background);
+            color: var(--dark-navy);
+            font-size: 16px;
+            transition: all 0.3s ease;
         }
-        .cta-btn:hover {
-            background-color: orange; /* Darker green on hover */
-            transform: scale(1.05);
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+            background: var(--card-background);
         }
-        .illustration {
-            margin-top: 1px;
-            margin-bottom: 4px;
-            max-width: 80%; /* Responsive width */
-            height: auto;
-            border-radius: 10px; /* Maintain aspect ratio */
+
+        input::placeholder, textarea::placeholder {
+            color: #666666;
         }
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                text-align: center;
-            }
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            .home-section {
-                padding: 80px 20px;
-            }
-            .home-section h2 {
-                font-size: 2.2em;
-            }
-            .home-section p {
-                font-size: 1.1em;
-            }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: var(--button-color);
+            color: var(--dark-navy);
+            font-weight: bold;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: var(--button-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Add styling for bio box */
+        .bio-group {
+            grid-column: span 2;  /* Make it span both columns */
+        }
+
+        textarea.bio-input {
+            min-height: 150px;  /* Make the bio box taller */
+            resize: vertical;    /* Allow vertical resizing */
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <h1>GrowTogether</h1>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="activity.html">Activity</a></li>
-            <li><a href="alumini.html">Alumni Connect</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="friends.html">Friends</a></li>
-            <li><a href="groups.html">Groups</a></li>
-            <li><a href="internships.html">Internships</a></li>
-        </ul>
-    </nav>
-    
-    <section class="home-section">
-        <img src="imgm.png" alt="Illustration" class="illustration">
-        <h2>Welcome to the GrowTogether</h2>
-        <p>Connect, collaborate, and grow with like-minded individuals. Engage in activities, find internships, attend events, and build meaningful connections.</p>
-        <a href="#" class="cta-btn">Get Started</a>
-        
-    </section>
+    <h2>Sign Up</h2>
+    <form>
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number (Optional)</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number">
+        </div>
+
+        <div class="form-group">
+            <label for="role">Your Role</label>
+            <select id="role">
+                <option value="student">Student</option>
+                <option value="alumni">Alumni</option>
+                <option value="mentor">Mentor</option>
+                <option value="professional">Professional</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="university">University Name</label>
+            <input type="text" id="university" placeholder="Enter your university name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="course">Course / Field of Study</label>
+            <input type="text" id="course" placeholder="Enter your course or field" required>
+        </div>
+
+        <div class="form-group">
+            <label for="interests">Interests, Skills & Hobbies</label>
+            <textarea id="interests" rows="3" placeholder="List your interests, skills, hobbies"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="goals">Primary Goals for This App</label>
+            <textarea id="goals" rows="3" placeholder="What do you want to achieve on this platform?"></textarea>
+        </div>
+
+        <div class="form-group bio-group">
+            <label for="bio">Bio</label>
+            <textarea 
+                id="bio" 
+                name="bio" 
+                class="bio-input" 
+                placeholder="Tell us about yourself..."
+            ></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="button" onclick="window.location.href='index.html'">Sign Up</button>
+        </div>
+    </form>
 </body>
 </html>

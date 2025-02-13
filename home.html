@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowTogether</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: rgb(0, 0, 29);
+            height: 100vh;
+            width: 100%;
+            color: yellow; /* Dark text for contrast */
+            line-height: 1.6;
+        }
+        .navbar {
+            background-color: #1B262C; /* Bright orange with transparency */
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .navbar h1 {
+            color: #ffffff; /* White for contrast */
+            font-size: 1.8em;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .nav-links li {
+            margin: 0 15px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff; /* White for links */
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* Light hover effect */
+            color: #ffffff;
+        }
+        .home-section {
+            text-align: center;
+            padding: 120px 10px;
+            color: yellow;
+        }
+        .home-section h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+        }
+        .home-section p {
+            font-size: 1.4em;
+            max-width: 800px;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+        .cta-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: orangered; /* Bright green with transparency */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .cta-btn:hover {
+            background-color: orange; /* Darker green on hover */
+            transform: scale(1.05);
+        }
+        .illustration {
+            margin-top: 1px;
+            margin-bottom: 4px;
+            max-width: 80%; /* Responsive width */
+            height: auto;
+            border-radius: 10px; /* Maintain aspect ratio */
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            .home-section {
+                padding: 80px 20px;
+            }
+            .home-section h2 {
+                font-size: 2.2em;
+            }
+            .home-section p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>GrowTogether</h1>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="activity.html">Activity</a></li>
+            <li><a href="alumini.html">Alumni Connect</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="friends.html">Friends</a></li>
+            <li><a href="groups.html">Groups</a></li>
+            <li><a href="internships.html">Internships</a></li>
+        </ul>
+    </nav>
+    
+    <section class="home-section">
+        <img src="imgm.png" alt="Illustration" class="illustration">
+        <h2>Welcome to the GrowTogether</h2>
+        <p>Connect, collaborate, and grow with like-minded individuals. Engage in activities, find internships, attend events, and build meaningful connections.</p>
+        <a href="#" class="cta-btn">Get Started</a>
+        
+    </section>
+</body>
+</html>
